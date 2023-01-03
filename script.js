@@ -15,9 +15,11 @@ for ( i = 0; i < 16; i++) {
 
 const boxes = document.querySelectorAll('.box');
 
+function addColour (e) {
+    e.target.style.backgroundColor = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
+    e.target.removeEventListener('mouseover', addColour)
+}
+
 boxes.forEach( (cell) => {
-    cell.addEventListener('mouseover', (e) => {
-        e.target.style.backgroundColor = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
-        // e.target.classList.add('active');
-    })
+    cell.addEventListener('mouseover', addColour)
 } )
