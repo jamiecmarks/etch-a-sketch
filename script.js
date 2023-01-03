@@ -18,6 +18,5 @@ const boxes = document.querySelectorAll('.box');
 boxes.forEach( (cell) => {
     cell.addEventListener('mouseover', (e) => {
         e.target.classList.add('active');
-
     })
 } )

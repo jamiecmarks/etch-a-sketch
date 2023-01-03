@@ -1,24 +1,35 @@
 body {
     padding: 0px;
-    margin: opx;
+    margin:
 }
 
 .box {
     border: 2px solid;
-    padding: 30px;
+    flex: 1 1 auto;
 }
 
 .grid {
     text-align: center;
-    display:inline-block;
+    display:flex;
+    flex-direction: column;
     position:relative;
+    height: 960px;
+   
+
 }
 
 .container {
     display: flex;
     justify-content: space-around;
+    
 }
 
 .active {
     background-color: rgba(255, 0, 0, 0.267);
+}
+
+.row {
+    width: 960px;
+    flex: 1 1 auto;
+
 }
