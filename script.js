@@ -1,5 +1,10 @@
 const grid = document.querySelector('.grid');
 
+function addColour (e) {
+    e.target.style.backgroundColor = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
+    e.target.removeEventListener('mouseover', addColour)
+}
+
 function createGrid( num ) {
 
     for ( i = 0; i < num; i++) {
@@ -14,19 +19,26 @@ function createGrid( num ) {
         }
 
     }
+
+    const boxes = document.querySelectorAll('.box');
+
+    boxes.forEach( (cell) => {
+        cell.addEventListener('mouseover', addColour)
+    } )
 }
+
 
 
 createGrid( 16 )
 
 
-const boxes = document.querySelectorAll('.box');
+// console.log(rows)
+// console.log(boxes);
+function deleteGrid () {
 
-function addColour (e) {
-    e.target.style.backgroundColor = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
-    e.target.removeEventListener('mouseover', addColour)
+    const rows = document.querySelectorAll('.row');
+
+    for ( line of rows ) {
+        line.remove();
+    }
 }
-
-boxes.forEach( (cell) => {
-    cell.addEventListener('mouseover', addColour)
-} )
