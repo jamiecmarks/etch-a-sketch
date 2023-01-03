@@ -17,6 +17,7 @@ const boxes = document.querySelectorAll('.box');
 
 boxes.forEach( (cell) => {
     cell.addEventListener('mouseover', (e) => {
-        e.target.classList.add('active');
+        e.target.style.backgroundColor = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
+        // e.target.classList.add('active');
     })
 } )
