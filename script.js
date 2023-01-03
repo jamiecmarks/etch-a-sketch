@@ -5,7 +5,8 @@ function addColour (e) {
     e.target.removeEventListener('mouseover', addColour)
 }
 
-function createGrid( num ) {
+function createGrid( num ) { //create grid in .grid element; a num x num grid
+    deleteGrid();
 
     for ( i = 0; i < num; i++) {
         const row = document.createElement('div');
@@ -28,13 +29,7 @@ function createGrid( num ) {
 }
 
 
-
-createGrid( 16 )
-
-
-// console.log(rows)
-// console.log(boxes);
-function deleteGrid () {
+function deleteGrid () { //delete all nodes of the grid DOM
 
     const rows = document.querySelectorAll('.row');
 
@@ -42,3 +37,5 @@ function deleteGrid () {
         line.remove();
     }
 }
+
+createGrid(16);
