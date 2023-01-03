@@ -6,6 +6,13 @@ function addColour (e) {
 }
 
 function createGrid( num ) { //create grid in .grid element; a num x num grid
+    
+
+    if (num >= 100) {
+        alert("Number too high!")
+        return;
+    }
+
     deleteGrid();
 
     for ( i = 0; i < num; i++) {
